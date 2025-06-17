@@ -12,140 +12,113 @@
       margin: 0;
       padding: 0;
     }
-    nav {
+    ul {
       background-color: #000;
-      padding: 10px 20px;
+      margin: 0;
+      padding: 20px;
       display: flex;
       justify-content: center;
+      list-style: none;
       border-bottom: 1px solid #444;
     }
-    nav ul {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      gap: 30px;
+    ul li {
+      margin: 0 20px;
     }
-    nav a {
+    ul a {
       text-decoration: none;
-      color: #fdd700;
+      color: #fff700;
       font-weight: bold;
     }
     .main-visual {
       text-align: center;
-      padding: 50px 20px;
+      padding: 30px 20px;
     }
-    .main-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-    }
-    .main-logo img {
-      height: 100px;
-    }
-    .brand-name {
-      font-size: 64px;
-      color: #fdd700;
-      font-weight: bold;
-    }
-    .main-image img {
-      width: 90%;
-      max-width: 600px;
-      margin-top: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    }
-    .slogan {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #fff;
+    .main-visual img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     .gallery-section {
-      background-color: #111;
-      padding: 40px 20px;
       text-align: center;
+      padding: 40px 20px;
     }
     .gallery-section h2 {
-      color: #fdd700;
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-    .gallery-section p {
-      font-size: 16px;
+      color: #ffd700;
+      font-size: 28px;
       margin-bottom: 30px;
     }
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
     .photo-grid img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
     footer {
       background-color: #000;
       text-align: center;
-      padding: 30px;
-      color: #aaa;
+      padding: 40px 20px;
       font-size: 14px;
+      color: #aaa;
+      line-height: 1.8;
+    }
+    footer strong {
+      color: #fff700;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#home">홈</a></li>
-      <li><a href="#menu">메뉴</a></li>
-      <li><a href="#location">오시는 길</a></li>
-      <li><a href="#contact">문의</a></li>
-      <li><a href="#gallery">리뷰 & 사진</a></li>
-    </ul>
-  </nav>
+  <ul>
+    <li><a href="#home">홈</a></li>
+    <li><a href="#menu">메뉴</a></li>
+    <li><a href="#gallery">오시는 길</a></li>
+    <li><a href="#contact">문의</a></li>
+  </ul>
 
   <section class="main-visual" id="home">
-    <div class="main-logo">
-      <img src="images/monkey_knife.png" alt="칼 든 원숭이 캐릭터" />
-      <h1 class="brand-name">몽키네</h1>
-    </div>
-    <div class="main-image">
-      <img src="images/main_bibimbap.png" alt="짬뽕비빔밥 대표 이미지" />
-    </div>
+    <img src="images/main.jpg" alt="몽키네 짬뽕비빔밥 메인 이미지" />
   </section>
 
-  <section class="gallery-section" id="gallery">
-    <h2>리뷰 & 사진</h2>
-    <p>몽키네 매장 내부와 외부, 대기 사진들을 확인해보세요.</p>
+  <section class="gallery-section" id="menu">
+    <h2>SIGNATURE MENU</h2>
     <div class="photo-grid">
-      <img src="images/shop_outside1.jpg" alt="외부사진1">
-      <img src="images/shop_outside2.jpg" alt="외부사진2">
-      <img src="images/shop_inside1.jpg" alt="내부사진1">
-      <img src="images/shop_inside2.jpg" alt="내부사진2">
-      <img src="images/menu_board.jpg" alt="메뉴판">
-      <img src="images/waiting_area.jpg" alt="대기사진">
+      <div>
+        <img src="images/jajang.jpg" alt="자장면" />
+        <p>자장면</p>
+      </div>
+      <div>
+        <img src="images/jjambbong.jpg" alt="짬뽕" />
+        <p>짬뽕</p>
+      </div>
+      <div>
+        <img src="images/tangsuyuk.jpg" alt="탕수육" />
+        <p>탕수육</p>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>주소: 경기도 양주시 은현면 은현로 197</p>
-    <p>전화번호: 031-859-7007</p>
-    <p>영업시간: 오전 10:30 ~ 오후 2:00 (매주 월요일 휴무)</p>
-    <p>사업자등록번호: 123-38-46530 | 상표등록번호: 제40-2187231호</p>
-    <strong style="color:#fdd700">네이버에 '몽키네'를 검색하세요!</strong><br>
-    &copy; 2025 몽키네. 모든 권리 보유.
+  <footer id="contact">
+    <p><strong>주소:</strong> 경기도 양주시 은현면 은현로 197</p>
+    <p><strong>영업시간:</strong> 오전 10:30 ~ 오후 2:00</p>
+    <p><strong>휴무:</strong> 매주 월요일 휴무</p>
+    <p><strong>문의전화:</strong> 031-859-7007</p>
+    <p><strong>사업자등록번호:</strong> 123-38-46530</p>
+    <p><strong>상표등록번호:</strong> 제40-2187231호</p>
+    <p><strong>네이버 검색:</strong> "몽키네"를 검색해주세요</p>
+    <p>© 2025 몽키네. 모든 권리 보유.</p>
   </footer>
 
 </body>
 </html>
 
-    
- 
 
-
+   
 
   
