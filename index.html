@@ -118,12 +118,14 @@
 </body>
  <div id="popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
 background-color: white; display: flex; justify-content: center; align-items: center; z-index: 1000;">
-  <div style="width: 90vw; max-width: 350px; background: white; border-radius: 16px; box-shadow: 0 0 10px rgba(0,0,0,0.2); text-align: center; padding-bottom: 20px;">
+  <div style="width: 90vw; max-width: 280px; background: white; border-radius: 16px;
+              box-shadow: 0 0 10px rgba(0,0,0,0.2); text-align: center; padding-bottom: 20px;">
     
     <!-- 이미지 -->
-    <img src="images/mongkine-popup.png" alt="몽키네 이미지" style="width: 100%; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+    <img src="images/mongkine-popup.png" alt="몽키네 이미지"
+         style="width: 100%; border-top-left-radius: 16px; border-top-right-radius: 16px;">
 
-    <!-- 텍스트 (비빔밥 아래쪽) -->
+    <!-- 텍스트 -->
     <div style="margin-top: 16px; font-size: 16px; font-weight: bold; color: #c0392b;">
       📣 가맹점 모집 중!
     </div>
@@ -133,16 +135,14 @@ background-color: white; display: flex; justify-content: center; align-items: ce
 
     <!-- 닫기 버튼 -->
     <button onclick="document.getElementById('popup').style.display='none'"
-      style="margin-top: 20px; padding: 8px 20px; background: black; color: white;
-      border: none; border-radius: 8px; font-size: 14px; cursor: pointer;">
+            style="margin-top: 20px; padding: 8px 20px; background: black; color: white;
+                   border: none; border-radius: 8px; font-size: 14px; cursor: pointer;">
       닫기
     </button>
   </div>
 </div>
 
- 
-</html>
-
+    
 
    
 
