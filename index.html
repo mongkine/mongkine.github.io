@@ -117,20 +117,26 @@
 
 </body>
  <div id="popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-background-color: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1000;">
-  <div style="position: relative; width: 90vw; max-width: 500px;">
-    <img src="images/mongkine-popup.png" alt="몽키네 이미지" style="width: 100%; border-radius: 20px;">
-    <div style="position: absolute; top: 20%; left: 50%; transform: translateX(-50%); text-align: center; color: white; font-weight: bold; font-size: 18px; text-shadow: 1px 1px 3px black;">
-      <p style="margin: 0;">📣 몽키네 가맹점 모집 중!</p>
-      <p style="margin: 0;">문의: <strong>031-859-7007</strong></p>
+background-color: rgba(255,255,255,0.9); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+  <div style="position: relative; width: 80vw; max-width: 350px; border-radius: 16px; overflow: hidden; background: #fff;">
+    <img src="images/mongkine-popup.png" alt="몽키네 이미지" style="width: 100%;">
+    
+    <!-- 텍스트 (비빔밥 아래쪽) -->
+    <div style="position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); text-align: center; font-weight: bold; font-size: 15px;">
+      <p style="margin: 0; color: red;">📣 몽키네 가맹점 모집 중!</p>
+      <p style="margin: 0; color: black;">문의: <strong>031-859-7007</strong></p>
     </div>
-    <button onclick="document.getElementById('popup').style.display='none'"
-      style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
-      padding: 8px 20px; background: black; color: white; border: none; border-radius: 10px;">
-      닫기
-    </button>
+
+    <!-- 닫기 버튼 -->
+    <div style="position: absolute; bottom: 10px; width: 100%; text-align: center;">
+      <button onclick="document.getElementById('popup').style.display='none'"
+        style="padding: 6px 20px; background: black; color: white; border: none; border-radius: 8px; font-size: 14px;">
+        닫기
+      </button>
+    </div>
   </div>
 </div>
+
  
 </html>
 
