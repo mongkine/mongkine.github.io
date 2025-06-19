@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -67,6 +68,7 @@
       font-size: 14px;
       color: #aaa;
     }
+    /* Popup styles */
     .popup {
       position: fixed;
       top: 50%;
@@ -147,7 +149,7 @@
     </div>
   </main>
 
-  <!-- 팝업 -->
+  <!-- Popup -->
   <div class="popup-overlay" id="popupOverlay"></div>
   <div class="popup" id="popup">
     <div class="popup-close" onclick="closePopup()">×</div>
@@ -163,9 +165,8 @@
       setTimeout(() => {
         document.getElementById('popup').style.display = 'block';
         document.getElementById('popupOverlay').style.display = 'block';
-      }, 500);
+      }, 500); // 0.5초 뒤 팝업 등장
     }
   </script>
 </body>
 </html>
-
