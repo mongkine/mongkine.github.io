@@ -3,145 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>몽키네</title>
+  <title>목키네</title>
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Arial', sans-serif;
       background-color: #000;
       color: #fff;
     }
     header {
       background-color: #000;
-      color: #ffcc00;
-      padding: 20px;
-      text-align: center;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      background-color: #111;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      gap: 40px;
     }
     nav a {
-      color: #fff;
+      color: gold;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 1.1rem;
     }
-    nav a:hover {
-      color: #ffcc00;
-    }
-    section {
-      padding: 40px 20px;
+    .section {
+      padding: 60px 20px;
       text-align: center;
     }
-    .menu img,
-    .signature img {
-      width: 100px;
-      margin: 10px;
+    .main-image {
+      width: 100%;
+      max-width: 900px;
+      display: block;
+      margin: 0 auto;
+    }
+    .menu-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .menu-row img {
+      width: 150px;
+      border-radius: 10px;
+    }
+    .menu-row div {
+      text-align: center;
     }
     .scroll-container {
       overflow-x: auto;
       white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
+      padding: 10px 0;
     }
     .scroll-container img {
-      height: 200px;
+      height: 150px;
       margin: 0 10px;
-      border-radius: 8px;
+      border-radius: 10px;
     }
     .popup {
       position: fixed;
-      top: 20%;
+      top: 30%;
       left: 50%;
-      transform: translateX(-50%);
-      background: white;
-      color: black;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      color: #000;
       padding: 20px;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
       width: 300px;
-      z-index: 2000;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      display: none;
     }
-    .popup h3 {
-      margin-top: 0;
+    .popup img {
+      width: 100%;
     }
-    .popup button {
-      margin-top: 10px;
+    .popup-close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      cursor: pointer;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/mongkine_main_full.jpg" alt="몽키네 메인 이미지" style="width: 100%; max-width: 800px;" />
+    <nav>
+      <a href="#menu">\uc2dc\uae00\ub9ac\ucc98 \uba54\ub274</a>
+      <a href="#shop">\uac00\uac8c \uc0ac\uc9c4</a>
+      <a href="#review">\ub9ac\ubdf0 \uc0ac\uc9c4</a>
+      <a href="#location">\uc624\uc2dc\ub294 \uae38</a>
+    </nav>
   </header>
-  <nav>
-    <a href="#menu">시그니처 메뉴</a>
-    <a href="#gallery">가게사진</a>
-    <a href="#reviews">리뷰사진</a>
-    <a href="#location">오시는 길</a>
-  </nav>
 
-  <section id="menu">
-    <h2>시그니처 메뉴</h2>
-    <div class="menu">
-      <img src="images/jajang.jpg" alt="짜장면" />
-      <img src="images/jjambbong.jpg" alt="짬뽕" />
-      <img src="images/tangsuyuk.jpg" alt="탕수육" />
+  <div class="section">
+    <img src="images/mongkine_main_full.jpg" alt="\uba85\uc2dc" class="main-image" />
+  </div>
+
+  <div class="section" id="menu">
+    <h2>\uc2dc\uae00\ub9ac\ucc98 \uba54\ub274</h2>
+    <div class="menu-row">
+      <div>
+        <img src="images/jajang.jpg" alt="\uc790\uc7a5\uba74">
+        <div>\uc790\uc7a5\uba74</div>
+      </div>
+      <div>
+        <img src="images/jjambbong.jpg" alt="\uc9c4\ud48d">
+        <div>\uc9c4\ud48d</div>
+      </div>
+      <div>
+        <img src="images/tangsuyuk.jpg" alt="\ud0d5\uc218\uc6b1">
+        <div>\ud0d5\uc218\uc6b1</div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section id="gallery">
-    <h2>가게 사진</h2>
+  <div class="section" id="shop">
+    <h2>\uac00\uac8c \uc0ac\uc9c4</h2>
     <div class="scroll-container">
-      <img src="images/shop_clean_1.jpg" alt="가게사진1" />
-      <img src="images/shop_clean_2.jpg" alt="가게사진2" />
-      <img src="images/shop_clean_3.jpg" alt="가게사진3" />
-      <img src="images/shop_clean_4.jpg" alt="가게사진4" />
-      <img src="images/shop_clean_5.jpg" alt="가게사진5" />
+      <img src="images/shop_clean_1.jpg" />
+      <img src="images/shop_clean_2.jpg" />
+      <img src="images/shop_clean_3.jpg" />
+      <img src="images/shop_clean_4.jpg" />
+      <img src="images/shop_clean_5.jpg" />
     </div>
-  </section>
+  </div>
 
-  <section id="reviews">
-    <h2>리뷰 사진</h2>
+  <div class="section" id="review">
+    <h2>\ub9ac\ubdf0 \uc0ac\uc9c4</h2>
     <div class="scroll-container">
-      <img src="images/masked_review_01.jpg" alt="리뷰사진1" />
-      <img src="images/masked_review_02.jpg" alt="리뷰사진2" />
-      <img src="images/masked_review_04.jpg" alt="리뷰사진3" />
-      <img src="images/masked_review_05.jpg" alt="리뷰사진4" />
+      <img src="images/masked_review_01.jpg" />
+      <img src="images/masked_review_02.jpg" />
+      <img src="images/masked_review_04.jpg" />
+      <img src="images/masked_review_05.jpg" />
     </div>
-  </section>
+  </div>
 
-  <section id="location">
-    <h2>오시는 길</h2>
-    <p>경기도 양주시 은현면 은현로 197<br />
-    전화: 031-859-7007<br />
-    영업시간: 10:30 ~ 14:00<br />
-    매주 월요일 휴무</p>
-  </section>
+  <div class="section" id="location">
+    <h2>\uc624\uc2dc\ub294 \uae38</h2>
+    <p>\uacbd\uae30\ub3c4 \uc591\uc8fc\uc2dc \uc740\ud604\uba74 \uc740\ud604\ub85c 197</p>
+    <p>\ubb38\uc758: 031-859-7007</p>
+    <p>\uc601\uc5c5\uc2dc\uac04: \ub9e4\uc8fc \uc6d4\uc694\uc77c \ud734\ubb34 / 10:30 ~ 14:00</p>
+  </div>
 
-  <!-- 팝업창 -->
-  <div id="popup" class="popup">
-    <h3>📢 가맹점 문의</h3>
-    <p style="font-size:14px; line-height:1.4;">
-      중식 외에도 한식·양식 기술까지 전수 가능!<br />
-      직접 배우고 직접 운영하고 싶은 분들 환영!<br />
-      <strong>☎ 031-859-7007</strong>
-    </p>
-    <button onclick="document.getElementById('popup').style.display='none'">닫기</button>
+  <div class="popup" id="popup">
+    <div class="popup-close" onclick="document.getElementById('popup').style.display='none'">&times;</div>
+    <img src="images/franchise.png" alt="\uac00\ub9dd\uc810 \ubb38\uc758">
   </div>
 
   <script>
-    window.onload = function() {
-      setTimeout(function() {
-        document.getElementById("popup").style.display = "block";
-      }, 3000); // 3초 후 팝업 표시
-    };
+    // anchor scroll smooth
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   </script>
 </body>
 </html>
+
+
+
+   
+ 
