@@ -2,62 +2,69 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>몽키네 · 리뷰 & 가게사진</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>몽키네 - 리뷰 및 가게사진</title>
   <style>
     body {
-      margin: 0;
-      background-color: #000;
+      background-color: black;
       color: white;
-      font-family: 'Apple SD Gothic Neo', sans-serif;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
       text-align: center;
     }
-
     h2 {
       margin-top: 40px;
-      font-size: 24px;
+      font-size: 1.8rem;
+      color: #FFD700;
     }
-
-    .store-gallery {
+    .scroll-container {
+      width: 100%;
+      overflow: hidden;
       white-space: nowrap;
-      overflow-x: auto;
-      padding: 10px 0;
-      margin: 0 auto;
+      box-sizing: border-box;
+      margin: 30px 0;
     }
-
-    .store-photo {
+    .scroll-images {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 60s linear infinite;
+    }
+    .scroll-images img {
       width: 200px;
       height: auto;
       margin: 0 10px;
-      border-radius: 10px;
-      display: inline-block;
+      vertical-align: middle;
+      border-radius: 12px;
     }
-
-    .back-button {
-      margin: 30px auto;
-      padding: 10px 20px;
-      background: white;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
 <body>
-
-  <h2>몽키네 가게사진</h2>
-
-  <div class="store-gallery">
-    <img src="images/shop_clean_1.jpg" alt="가게사진1" class="store-photo">
-    <img src="images/shop_clean_2.jpg" alt="가게사진2" class="store-photo">
-    <img src="images/shop_clean_3.jpg" alt="가게사진3" class="store-photo">
-    <img src="images/shop_clean_4.jpg" alt="가게사진4" class="store-photo">
-    <img src="images/shop_clean_5.jpg" alt="가게사진5" class="store-photo">
+  <h2>가게 사진</h2>
+  <div class="scroll-container">
+    <div class="scroll-images">
+      <img src="images/store_01.jpg" alt="가게사진1">
+      <img src="images/store_02.jpg" alt="가게사진2">
+      <img src="images/store_03.jpg" alt="가게사진3">
+      <img src="images/store_04.jpg" alt="가게사진4">
+      <img src="images/store_05.jpg" alt="가게사진5">
+    </div>
   </div>
 
-  <button class="back-button" onclick="location.href='index.html'">← 홈페이지로 돌아가기</button>
-
+  <h2>리뷰 사진</h2>
+  <div class="scroll-container">
+    <div class="scroll-images">
+      <img src="images/review/masked_review_01.jpg" alt="리뷰사진1">
+      <img src="images/review/masked_review_02.jpg" alt="리뷰사진2">
+      <img src="images/review/masked_review_03.jpg" alt="리뷰사진3">
+      <img src="images/review/masked_review_04.jpg" alt="리뷰사진4">
+      <img src="images/review/masked_review_05.jpg" alt="리뷰사진5">
+    </div>
+  </div>
 </body>
 </html>
+
