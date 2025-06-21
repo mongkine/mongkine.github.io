@@ -2,146 +2,190 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>몽키네</title>
   <style>
-    html {
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: sans-serif;
+      color: white;
       scroll-behavior: smooth;
     }
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
+
     header {
-      background-color: #000;
-      padding: 15px 0;
-      text-align: center;
+      background-color: black;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
       position: sticky;
       top: 0;
       z-index: 999;
     }
-    nav a {
+
+    header a {
       color: yellow;
       text-decoration: none;
-      margin: 0 20px;
+      font-size: 18px;
       font-weight: bold;
-      font-size: 18px;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .main-image {
-      width: 100%;
-      max-width: 1000px;
-      display: block;
-      margin: 0 auto;
-    }
-    .menu-section {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .menu-section img {
-      width: 30%;
-      max-width: 300px;
-      margin: 10px;
-    }
-    .menu-label {
-      font-size: 18px;
-      margin-top: 5px;
-    }
-    .slider {
-      display: flex;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: scroll 40s linear infinite;
-      gap: 10px;
-    }
-    .slider img {
-      height: 200px;
-      border-radius: 10px;
-    }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+
     .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    footer {
+      padding: 60px 20px;
       text-align: center;
-      padding: 30px;
+    }
+
+    .main-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .signature-menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .signature-menu img {
+      width: 150px;
+      height: auto;
+    }
+
+    .signature-menu p {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    .info {
+      margin-top: 40px;
       font-size: 14px;
       color: #ccc;
     }
-    .popup {
-      display: block;
+
+    /* 팝업 */
+    #popup {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #popup img {
+      width: 90%;
+      max-width: 400px;
+    }
+
+    #popup-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
       background: white;
       color: black;
-      padding: 20px;
-      border-radius: 10px;
-      z-index: 1000;
-      max-width: 300px;
-      text-align: center;
-    }
-    .popup h2 {
-      font-size: 20px;
-    }
-    .popup-close {
-      margin-top: 10px;
-      background: black;
-      color: white;
-      padding: 5px 10px;
       border: none;
+      font-size: 20px;
       cursor: pointer;
+    }
+
+    /* 슬라이드 */
+    .slider {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .slider img {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      animation: slide 12s infinite;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="#menu">시그니처 메뉴</a>
-      <a href="#review">리뷰·가게사진</a>
-      <a href="#franchise">가맹점 모집</a>
-      <a href="#contact">오시는 길</a>
-    </nav>
-  </header>
+<!-- 팝업 -->
+<div id="popup">
+  <img src="images/franchise.png" alt="가맹점 문의">
+  <button id="popup-close" onclick="document.getElementById('popup').style.display='none'">✕</button>
+</div>
 
-  <!-- 메인 이미지 -->
-  <img src="images/mongkine_main_full.jpg" alt="몽키네 메인 이미지" class="main-image" />
+<!-- 상단 메뉴 -->
+<header>
+  <a href="#menu">시그니처 메뉴</a>
+  <a href="#review">리뷰·가게사진</a>
+  <a href="#franchise">가맹점 모집</a>
+  <a href="#location">오시는 길</a>
+</header>
 
-  <!-- 메뉴 섹션 -->
-  <section id="menu" class="section menu-section">
-    <h2>시그니처 메뉴</h2>
+<!-- 메인 -->
+<section class="section" id="main">
+  <img src="images/main.jpg" alt="메인 이미지" class="main-image">
+  <div class="signature-menu" id="menu">
     <div>
-      <img src="images/jajang.jpg" alt="짜장면"/>
-      <img src="images/jjambbong.jpg" alt="짬뽕"/>
-      <img src="images/tangsuyuk.jpg" alt="탕수육"/>
+      <img src="images/jjajang.jpg" alt="짜장면">
+      <p>짜장면</p>
     </div>
     <div>
-      <span class="menu-label">짜장면</span>
-      <span class="menu-label">짬뽕</span>
-      <span class="menu-label">탕수육</span>
+      <img src="images/jjamppong.jpg" alt="짬뽕">
+      <p>짬뽕</p>
     </div>
-  </section>
+    <div>
+      <img src="images/tangsuyuk.jpg" alt="탕수육">
+      <p>탕수육</p>
+    </div>
+  </div>
+  <div class="info">
+    <p>경기도 양주시 은현면 은현로 197</p>
+    <p>매주 월요일 휴무 / 영업시간 10:00 ~ 14:00</p>
+    <p>상표등록번호 제40-2187231호 | 사업자등록번호 123-38-46530</p>
+  </div>
+</section>
 
-  <!-- 리뷰·가게 사진 -->
-  <section id="review" class="section">
-    <h2>리뷰 사진</h2>
-    <div class="slider">
-      <img src="images/masked_review_01.jpg" alt="">
-      <img src="images/masked_review_02.jpg" alt="">
-      <img src="images/masked_rev_
+<!-- 리뷰 -->
+<section class="section" id="review">
+  <h2>리뷰·가게사진</h2>
+  <div class="slider">
+    <img src="images/review_01.jpg" alt="리뷰1">
+    <img src="images/review_02.jpg" alt="리뷰2">
+    <img src="images/review_03.jpg" alt="리뷰3">
+  </div>
+  <p><a href="https://naver.me/xl123456" target="_blank" style="color:yellow;">네이버 리뷰 바로가기</a></p>
+</section>
 
+<!-- 가맹점 모집 -->
+<section class="section" id="franchise">
+  <h2>가맹점 모집</h2>
+  <img src="images/franchise.png" alt="가맹점 문의 이미지" style="max-width:400px;">
+  <p>✔ 중식 외에도 한식·양식 기술까지 전수 가능</p>
+  <p>✔ 직접 배우고 직접 운영하고 싶은 분들 환영!</p>
+  <p>문의: 031-859-7007</p>
+</section>
 
+<!-- 오시는 길 -->
+<section class="section" id="location">
+  <h2>오시는 길</h2>
+  <p>경기도 양주시 은현면 은현로 197</p>
+  <p>031-859-7007</p>
+  <p><a href="https://map.naver.com/" target="_blank" style="color:yellow;">네이버 지도 보기</a></p>
+</section>
+
+</body>
+</html>
 
 
       
