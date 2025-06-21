@@ -1,65 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>몽키네 시그니처 메뉴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>몽키네 - 중국집</title>
   <style>
     body {
+      margin: 0;
+      font-family: sans-serif;
       background-color: black;
       color: white;
-      font-family: sans-serif;
       text-align: center;
-      margin: 0;
     }
-    .full-img {
+    nav {
+      background-color: #000;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      color: gold;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    section img {
+      max-width: 100%;
+      height: auto;
+    }
+    #signature img {
+      width: 90%;
+      max-width: 700px;
+    }
+    #review img, #franchise img {
       width: 100%;
-      max-width: 800px;
+      max-width: 500px;
+      margin: 10px auto;
+      display: block;
     }
-    .info {
-      padding: 20px;
-      font-size: 16px;
-      line-height: 1.8;
+    h2 {
+      color: gold;
+      margin-top: 60px;
+    }
+    iframe {
+      max-width: 100%;
     }
   </style>
 </head>
 <body>
-
-<!-- ✅ 팝업창 (반투명 배경) -->
-<div id="popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-background-color: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 1000;">
-  <div style="width: 90vw; max-width: 280px; background: white; border-radius: 16px;
-              box-shadow: 0 0 10px rgba(0,0,0,0.2); text-align: center; padding: 20px;">
-
-    <img src="monkey.png" alt="몽키네 원숭이 캐릭터"
-         style="width: 100%; max-width: 220px; display: block; margin: 0 auto;">
-
-    <p style="margin-top: 16px; font-size: 18px; font-weight: bold; color: #c0392b;">
-      📣 가맹점 모집
-    </p>
-    <p style="margin-top: 6px; font-size: 16px; color: #333;">
-      문의: <strong>031-859-7007</strong>
-    </p>
-
-    <button onclick="document.getElementById('popup').style.display='none'"
-            style="margin-top: 20px; padding: 8px 20px; background: black; color: white;
-                   border: none; border-radius: 8px; font-size: 14px; cursor: pointer;">
-      닫기
-    </button>
+  <!-- 팝업 -->
+  <div id="popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+       background-color: rgba(255, 255, 255, 0.95); display: flex; justify-content: center;
+       align-items: center; z-index: 1000;">
+    <div style="width: 90vw; max-width: 280px; background: white; border-radius: 16px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2); text-align: center; overflow: hidden; padding-bottom: 20px;">
+      <img src="images/monkey.png" alt="몽키네" style="width: 100%; height: 200px; object-fit: contain; background: white;">
+      <div style="margin-top: 16px; font-size: 16px; font-weight: bold; color: #c0392b;">✨ 가맹점 모집 중!</div>
+      <div style="margin-top: 6px; font-size: 15px; color: #333;">문의: <strong>031-859-7007</strong></div>
+      <button onclick="document.getElementById('popup').style.display='none'"
+              style="margin-top: 20px; padding: 8px 20px; background: black; color: white;
+                     border: none; border-radius: 8px; font-size: 14px; cursor: pointer;">닫기</button>
+    </div>
   </div>
-</div>
 
-<!-- ✅ 메인 이미지 -->
-<img src="mongkine_main_full.jpg" class="full-img" alt="몽키네 대표 이미지" />
+  <!-- 상단 메뉴 -->
+  <nav>
+    <a href="#signature">시그니처 메뉴</a>
+    <a href="#review">리뷰·가게사진</a>
+    <a href="#franchise">가맹점 모집</a>
+    <a href="#location">오시는 길</a>
+  </nav>
 
-<!-- ✅ 하단 정보 -->
-<div class="info">
-  <p>경기도 양주시 은현면 은현로 197</p>
-  <p>영업시간: 오전 10:30 ~ 오후 2:00 / <strong>매주 월요일 휴무</strong></p>
-  <p>사업자등록번호: 123-38-46530</p>
-  <p>상표등록번호: 제40-2187231호</p>
-</div>
+  <!-- 메인 이미지 -->
+  <img src="images/main.jpg" alt="몽키네 메인 이미지">
 
+  <!-- 시그니처 메뉴 -->
+  <section id="signature">
+    <img src="images/main_bibimbap.png" alt="시그니처 비빔밥">
+    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+      <img src="images/jajangmyeon.jpg" alt="짜장면" style="width: 30%; max-width: 180px;">
+      <img src="images/jjambbong.png" alt="짬뽕" style="width: 30%; max-width: 180px;">
+      <img src="images/tangsuyuk.jpg" alt="탕수육" style="width: 30%; max-width: 180px;">
+    </div>
+    <p style="margin-top: 20px;">영업시간: 오전 10:30 ~ 오후 2:00 / <strong>매주 월요일 휴무</strong></p>
+  </section>
+
+  <!-- 리뷰·가게사진 -->
+  <section id="review">
+    <h2>몽키네 가게 사진</h2>
+    <img src="images/store1.jpg" alt="가게 외부">
+    <img src="images/store2.jpg" alt="가게 외부 2">
+    <img src="images/store3.jpg" alt="가게 내부">
+  </section>
+
+  <!-- 가맹점 모집 -->
+  <section id="franchise">
+    <h2>가맹점 모집</h2>
+    <img src="images/franchise.jpg" alt="불꽃 주방 이미지">
+    <p>레시피만 전수 가능합니다.</p>
+    <p>가맹계약은 별도 상의 후 진행됩니다.</p>
+    <p>문의: 031-859-7007</p>
+    <p>대표: 마승희</p>
+    <p>이메일: jsma0528</p>
+  </section>
+
+  <!-- 오시는 길 -->
+  <section id="location">
+    <h2>오시는 길</h2>
+    <iframe src="https://map.naver.com/v5/entry/place/1582115309?c=15,0,0,0,dh"
+            style="width:100%; height:300px; border:0;" allowfullscreen loading="lazy"></iframe>
+    <p>경기도 양주시 은현면 은현로 197</p>
+    <p>사업자등록번호: 123-38-46530</p>
+    <p>상표등록번호: 제40-2187231호</p>
+  </section>
+
+  <!-- 네이버 리뷰 남기기 -->
+  <section style="padding: 40px 20px; background: #111; color: white;">
+    <h2 style="color: gold;">리뷰 남기기</h2>
+    <p>방문해주셔서 감사합니다 😊</p>
+    <a href="https://map.naver.com/p/entry/place/1582115309" target="_blank"
+       style="display: inline-block; margin-top: 15px; padding: 12px 20px; background-color: #2db400; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
+      네이버에서 리뷰 남기기
+    </a>
+  </section>
 </body>
 </html>
