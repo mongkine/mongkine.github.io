@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>몽키네 시그니처 메뉴</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+    }
+    .full-img {
+      width: 100%;
+      max-width: 800px;
+    }
+    .info {
+      padding: 20px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ✅ 팝업창 (반투명 배경) -->
+<div id="popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background-color: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+  <div style="width: 90vw; max-width: 280px; background: white; border-radius: 16px;
+              box-shadow: 0 0 10px rgba(0,0,0,0.2); text-align: center; padding: 20px;">
+
+    <img src="monkey.png" alt="몽키네 원숭이 캐릭터"
+         style="width: 100%; max-width: 220px; display: block; margin: 0 auto;">
+
+    <p style="margin-top: 16px; font-size: 18px; font-weight: bold; color: #c0392b;">
+      📣 가맹점 모집
+    </p>
+    <p style="margin-top: 6px; font-size: 16px; color: #333;">
+      문의: <strong>031-859-7007</strong>
+    </p>
+
+    <button onclick="document.getElementById('popup').style.display='none'"
+            style="margin-top: 20px; padding: 8px 20px; background: black; color: white;
+                   border: none; border-radius: 8px; font-size: 14px; cursor: pointer;">
+      닫기
+    </button>
+  </div>
+</div>
+
+<!-- ✅ 메인 이미지 -->
+<img src="mongkine_main_full.jpg" class="full-img" alt="몽키네 대표 이미지" />
+
+<!-- ✅ 하단 정보 -->
+<div class="info">
+  <p>경기도 양주시 은현면 은현로 197</p>
+  <p>영업시간: 오전 10:30 ~ 오후 2:00 / <strong>매주 월요일 휴무</strong></p>
+  <p>사업자등록번호: 123-38-46530</p>
+  <p>상표등록번호: 제40-2187231호</p>
+</div>
+
+</body>
+</html>
