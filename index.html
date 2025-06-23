@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -8,54 +7,36 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="popup">
-    <img src="images/monkey.png" alt="몽키네 캐릭터" class="popup-character" />
-    <div class="popup-content">
+  <div class="main">
+    <img src="images/main.jpg" alt="메인 이미지" class="main-img" />
+    <div class="popup">
+      <img src="images/monkey.png" alt="팝업 캐릭터" />
       <p>가맹 문의는 031-859-7007</p>
     </div>
   </div>
-  <header>
-    <img src="images/main.jpg" alt="메인 이미지" class="main-image" />
-  </header>
-  <section id="signature">
+
+  <section class="signature">
     <h2>시그니처 메뉴</h2>
-    <div class="menu-items">
-      <div><img src="images/jajangmyeon.jpg" alt="짜장면" /><p>짜장면</p></div>
-      <div><img src="images/jjambbong.png" alt="짬뽕" /><p>짬뽕</p></div>
-      <div><img src="images/tangsuyuk.jpg" alt="탕수육" /><p>탕수육</p></div>
+    <div class="menu">
+      <div><img src="images/jajangmyeon.jpg" /><p>짜장면</p></div>
+      <div><img src="images/jjambbong.png" /><p>짬뽕</p></div>
+      <div><img src="images/tangsuyuk.jpg" /><p>탕수육</p></div>
     </div>
-    <p class="hours">영업시간: 10:00 ~ 14:00 / 매주 월요일 휴무</p>
+    <p>영업시간: 10:00 ~ 14:00 / 매주 월요일 휴무</p>
+    <nav>
+      <a href="#review">리뷰·가게사진</a>
+      <a href="#franchise">가맹점 모집</a>
+      <a href="#location">오시는 길</a>
+    </nav>
   </section>
-  <nav>
-    <ul>
-      <li><a href="#review">리뷰·가게사진</a></li>
-      <li><a href="#franchise">가맹점 모집</a></li>
-      <li><a href="#location">오시는 길</a></li>
-    </ul>
-  </nav>
-  <section id="review" class="hidden-section">
-    <h2>리뷰 & 사진</h2>
-    <div class="slider">
-      <img src="images/masked_review_01.jpg" />
-      <img src="images/masked_review_02.jpg" />
-      <img src="images/masked_review_03.jpg" />
-      <img src="images/masked_review_04.jpg" />
-      <img src="images/masked_review_05.jpg" />
-    </div>
-    <p><a href="https://naver.me/5lL2K3qk" target="_blank">네이버 리뷰 보기</a></p>
-  </section>
-  <section id="franchise" class="hidden-section">
-    <h2>몽키네 가맹점 모집</h2>
-    <img src="images/franchise.png" alt="가맹안내" />
-    <p>✔ 중식 외에도 한식·양식 기술까지 전수 가능<br>
-    ✔ 직접 배우고 직접 운영하고 싶은 분들 환영!<br>
-    문의: 031-859-7007</p>
-  </section>
-  <section id="location" class="hidden-section">
+
+  <section id="review" class="hidden">[리뷰 슬라이드 자리]</section>
+  <section id="franchise" class="hidden">[가맹점 안내 자리]</section>
+  <section id="location" class="hidden">
     <h2>오시는 길</h2>
-    <p>경기도 양주시 은현면 은현로 197<br>전화: 031-859-7007</p>
+    <p>경기도 양주시 은현면 은현로 197<br/>전화: 031-859-7007</p>
   </section>
+
   <script src="script.js"></script>
 </body>
 </html>
-    
