@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>몽키네</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> 몽키네</title>
   <style>
     body {
       margin: 0;
@@ -12,111 +12,102 @@
       font-family: 'Noto Sans KR', sans-serif;
       text-align: center;
     }
-    #popup {
+    .popup {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 9999;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      width: 80vw;
+      max-width: 400px;
+      background: white;
+      padding: 0;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .popup img {
+      width: 100%;
+      display: block;
+    }
+    .main {
+      margin-top: 80px;
+    }
+    .main img {
+      width: 50%;
+      max-width: 600px;
+    }
+    h2 {
+      color: #ffcc00;
+      font-size: 2em;
+      margin-top: 50px;
+    }
+    .menu-section {
       display: flex;
       justify-content: center;
-      align-items: center;
-    }
-    #popup img {
-      max-width: 90vw;
-      height: auto;
-    }
-    #popup-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-    }
-    .main-image {
-      margin-top: 100px;
-    }
-    .signature-section {
-      margin-top: 40px;
-    }
-    .menu-row {
-      display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
       gap: 40px;
       margin: 30px 0;
     }
-    .menu-row img {
-      width: 160px;
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .menu-item img {
+      width: 150px;
+      height: auto;
       border-radius: 10px;
     }
-    .menu-labels {
-      display: flex;
-      justify-content: center;
-      gap: 160px;
-      font-size: 22px;
-      font-weight: bold;
-      color: yellow;
-      margin-bottom: 50px;
+    .menu-item p {
+      margin-top: 10px;
+      color: #ffd700;
+      font-size: 1.2em;
     }
     .info {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #ccc;
+      margin: 50px 0 100px;
+      font-size: 1em;
+      line-height: 1.8;
     }
-    .highlight {
-      color: #ffde00;
-      font-weight: bold;
+    .info strong {
+      color: #fff;
     }
   </style>
 </head>
 <body>
-
   <!-- 팝업 이미지 -->
-  <div id="popup">
-    <span id="popup-close">&times;</span>
-    <img src="images/franchise_popup.png" alt="가맹문의">
+  <div class="popup">
+    <img src="images/monkey.png" alt="몽키네 캐릭터" />
   </div>
 
-  <!-- 메인 이미지 -->
-  <div class="main-image">
-    <img src="images/main_bibimb.png" alt="짬뽕비빔밥" style="width: 300px;">
+  <!-- 메인 비빔밥 이미지 -->
+  <div class="main">
+    <img src="images/main_bibimbap.png" alt="메인 비빔밥" />
   </div>
 
-  <!-- 시그니처 메뉴 -->
-  <div class="signature-section">
-    <h2 style="font-size: 30px; color: gold;">SIGNATURE MENU</h2>
-    <div class="menu-row">
-      <img src="images/jajang.jpg" alt="짜장면">
-      <img src="images/jjambbong.jpg" alt="짬뽕">
-      <img src="images/tangsuyuk.jpg" alt="탕수육">
+  <!-- 메뉴 영역 -->
+  <h2>SIGNATURE MENU</h2>
+  <div class="menu-section">
+    <div class="menu-item">
+      <img src="images/jajangmyeon.jpg" alt="짜장면" />
+      <p>짜장면</p>
     </div>
-    <div class="menu-labels">
-      <div>짜장면</div>
-      <div>짬뽕</div>
-      <div>탕수육</div>
+    <div class="menu-item">
+      <img src="images/jjambbong.png" alt="짬뽕" />
+      <p>짬뽕</p>
+    </div>
+    <div class="menu-item">
+      <img src="images/tangsuyuk.jpg" alt="탕수육" />
+      <p>탕수육</p>
     </div>
   </div>
 
-  <!-- 정보 -->
+  <!-- 정보 영역 -->
   <div class="info">
-    <p>영업시간: <span class="highlight">10:00 ~ 14:00</span> / <span class="highlight">매주 월요일 휴무</span></p>
-    <p>주소: <span class="highlight">경기도 양주시 은현면 은현로 197</span></p>
-    <p>전화번호: <span class="highlight">031-859-7007</span></p>
-    <p>상표등록번호: <span class="highlight">제40-2187231호</span> | 사업자등록번호: <span class="highlight">123-38-4530</span></p>
+    건기도 양주시 은현면 은현로 197 | <strong>031-859-7007</strong><br />
+    열업시간: 오전 10시 ∼ 오후 2시 | 매주 <strong>월요일</strong> 휴무<br />
+    상표등록번호: 제40-2187231호 | 사입자등록번호: 123-38-4530
   </div>
-
-  <script>
-    // 팝업 닫기 기능
-    document.getElementById("popup-close").onclick = function() {
-      document.getElementById("popup").style.display = "none";
-    };
-
-    // 자동 닫기 (예: 5초 후)
-    setTimeout(function() {
-      document.getElementById("popup").style.display = "none";
-    }, 7000);
-  </script>
-
 </body>
 </html>
+
+  
